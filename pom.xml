@@ -68,7 +68,7 @@
                 </executions>
             </plugin>
 		</plugins>
-		<finalName>Springboot-docker</finalName>
+		<finalName>springboot-docker</finalName>
 	</build>
 
 
