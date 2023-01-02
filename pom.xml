@@ -36,11 +36,6 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		<dependency>
-    <groupId>com.spotify</groupId>
-    <artifactId>dockerfile-maven-plugin</artifactId>
-    <version>1.4.13</version>
-</dependency>
 	</dependencies>
 
 	<build>
@@ -49,27 +44,32 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
-<configuration>
-<username>shivangipandey01</username>
-<password>shiv@12345</password>
-<repository>shivangipandey01/{project.build.finalname}</repository>
-<tag>latest</tag>
-<buildArgs>
-<JAR_FILE>target/${project.build.finalname}.jar</JAR_FILE>
-</buildArgs>
-</configuration>
-<executions>
-<execution>
-<phase>install</phase>
-<id>tag-version</id>
-<goals>
-<goal>build</goal>
-<goal>push</goal>
-</goals>
-</execution>
-</executions>
+			<groupId>com.spotify</groupId>
+                <artifactId>dockerfile-maven-plugin</artifactId>
+                <version>1.4.10</version>
+                <configuration>
+                    <username>shivangipandey01</username>
+                    <password>shiv@12345</password>
+                    <repository>shivangipandey01/${project.build.finalName}.jar</repository>
+                    <tag>latest</tag>
+                    <buildArgs>
+                        <JAR_FILE>target/${project.build.finalName}.jar</JAR_FILE>
+                    </buildArgs>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>install</phase>
+                        <id>tag-version</id>
+                        <goals>
+                            <goal>build</goal>
+                            <goal>push</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
 		</plugins>
 		<finalName>Springboot-docker</finalName>
 	</build>
+
 
 </project>
