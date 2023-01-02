@@ -36,6 +36,11 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+    <groupId>com.spotify</groupId>
+    <artifactId>dockerfile-maven-plugin</artifactId>
+    <version>1.4.13</version>
+</dependency>
 	</dependencies>
 
 	<build>
@@ -44,11 +49,6 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
-			<dependency>
-    <groupId>com.spotify</groupId>
-    <artifactId>dockerfile-maven-plugin</artifactId>
-    <version>1.4.13</version>
-</dependency>
 <configuration>
 <username>shivangipandey01</username>
 <password>shiv@12345</password>
